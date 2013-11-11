@@ -28,11 +28,6 @@ all nodes in the graph are added.
 ###
 define ["DataProvider"], (DataProvider) ->
 
-  # minStrength is the minimum similarity
-  # two nodes must have to be considered linked.
-  # this is evaluated at the minimum dimensionality
-  numNodes = 25
-
   class ExampleProvider extends DataProvider
 
     init: (instances) ->
@@ -45,6 +40,7 @@ define ["DataProvider"], (DataProvider) ->
       @ajax "get_edges", data, (arrayOfCoeffs) ->
         callback _.map arrayOfCoeffs, (coeffs, i) ->
           coeffs: coeffs
+          base_value: coeffs
 
     getLinkedNodes: (nodes, callback) ->
       data =

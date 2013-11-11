@@ -17,7 +17,7 @@ class GithubProvider(object):
       value = self.data[node["text"]].get(n2["text"])
       if value is None:
         value = 0
-      value = 0.75 + 0.25 * (float(value) / 10)
+
       result.append(value)
 
     return result

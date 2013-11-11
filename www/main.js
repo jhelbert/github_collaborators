@@ -52,6 +52,7 @@
       "NodeSelection": {},
       "NodeDetails": {},
       "LinkDistribution": {},
+      "LinkDistributionNormalizer": {},
       "local/ExampleDataProvider": {}
     };
     return Celestrium.init(plugins, function(instances) {

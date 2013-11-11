@@ -33,8 +33,7 @@ all nodes in the graph are added.
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   define(["DataProvider"], function(DataProvider) {
-    var ExampleProvider, numNodes, _ref;
-    numNodes = 25;
+    var ExampleProvider, _ref;
     return ExampleProvider = (function(_super) {
       __extends(ExampleProvider, _super);
 
@@ -56,7 +55,8 @@ all nodes in the graph are added.
         return this.ajax("get_edges", data, function(arrayOfCoeffs) {
           return callback(_.map(arrayOfCoeffs, function(coeffs, i) {
             return {
-              coeffs: coeffs
+              coeffs: coeffs,
+              base_value: coeffs
             };
           }));
         });
