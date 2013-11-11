@@ -4,3 +4,6 @@
 [submodule "celestrium"]
 	path = celestrium
 	url = git://github.com/jdhenke/celestrium.git
+[submodule "www/celestrium"]
+	path = www/celestrium
+	url = git://github.com/jdhenke/celestrium.git
