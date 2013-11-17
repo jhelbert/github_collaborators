@@ -17,7 +17,6 @@ class GithubProvider(object):
       value = self.data[node["text"]].get(n2["text"])
       if value is None:
         value = 0
-
       result.append(value)
 
     return result

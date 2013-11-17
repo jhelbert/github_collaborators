@@ -55,7 +55,7 @@ all nodes in the graph are added.
         return this.ajax("get_edges", data, function(arrayOfCoeffs) {
           return callback(_.map(arrayOfCoeffs, function(coeffs, i) {
             return {
-              coeffs: coeffs,
+              strength: coeffs,
               base_value: coeffs
             };
           }));
