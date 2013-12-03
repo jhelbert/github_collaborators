@@ -11,6 +11,7 @@ class GithubProvider(object):
   def get_nodes(self):
     return self.data.keys()
 
+
   def get_edges(self, node, otherNodes):
     result = []
     for n2 in otherNodes:
@@ -31,3 +32,4 @@ class GithubProvider(object):
         newNodesSet.add(relatedNode)
         i += 1
     return [{"text": node} for node in newNodesSet]
+

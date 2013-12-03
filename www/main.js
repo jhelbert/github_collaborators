@@ -50,13 +50,18 @@
       },
       "Stats": {},
       "NodeSelection": {},
+      "SelectionLayer": {},
       "NodeDetails": {},
       "LinkDistribution": {},
-      "LinkDistributionNormalizer": {},
+      "ContextMenu": {},
       "local/ExampleDataProvider": {}
     };
     return Celestrium.init(plugins, function(instances) {
-      return instances["GraphView"].getLinkFilter().set("threshold", 0);
+      var ContextMenu, dataProvider;
+      instances["GraphView"].getLinkFilter().set("threshold", 0);
+      dataProvider = instances["local/ExampleDataProvider"];
+      ContextMenu = instances["ContextMenu"];
+      return ContextMenu.addMenuOption("Expand Nodes", dataProvider.addRelatedNodes, dataProvider);
     });
   });
 

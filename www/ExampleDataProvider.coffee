@@ -33,6 +33,7 @@ define ["DataProvider"], (DataProvider) ->
     init: (instances) ->
       super(instances)
 
+
     getLinks: (node, nodes, callback) ->
       data =
         node: JSON.stringify(node)

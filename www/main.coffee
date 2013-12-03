@@ -63,9 +63,10 @@ require ["Celestrium"], (Celestrium) ->
         prefetch: "get_nodes"
       "Stats": {}
       "NodeSelection": {}
+      "SelectionLayer": {}
       "NodeDetails": {}
       "LinkDistribution": {}
-      "LinkDistributionNormalizer": {}
+      "ContextMenu": {}
 
     # provides functinos to retreive nodes and links
     # relative present ones
@@ -76,3 +77,7 @@ require ["Celestrium"], (Celestrium) ->
 
     # this allows all link strengths to be visible
     instances["GraphView"].getLinkFilter().set("threshold", 0)
+
+    dataProvider = instances["local/ExampleDataProvider"]
+    ContextMenu = instances["ContextMenu"]
+    ContextMenu.addMenuOption "Expand Nodes", dataProvider.addRelatedNodes, dataProvider
